@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Sky Chess Online</title>
+    <!-- Tailwind CSS -->
+    <!-- Tailwind utilities compiled ahead of time (no CDN script, no production warning) -->
+    <style>
+*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0}.bottom-5{bottom:1.25rem}.left-1\/2{left:50%}.z-10{z-index:10}.z-20{z-index:20}.z-30{z-index:30}.z-50{z-index:50}.mx-3{margin-left:.75rem;margin-right:.75rem}.mx-auto{margin-left:auto;margin-right:auto}.my-auto{margin-top:auto;margin-bottom:auto}.mb-1{margin-bottom:.25rem}.mb-1\.5{margin-bottom:.375rem}.mb-2{margin-bottom:.5rem}.mb-2\.5{margin-bottom:.625rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.ml-1{margin-left:.25rem}.mt-1{margin-top:.25rem}.mt-1\.5{margin-top:.375rem}.mt-2\.5{margin-top:.625rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-12{height:3rem}.h-16{height:4rem}.h-2\.5{height:.625rem}.h-3{height:.75rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-52{height:13rem}.h-6{height:1.5rem}.h-9{height:2.25rem}.w-10{width:2.5rem}.w-12{width:3rem}.w-16{width:4rem}.w-2\.5{width:.625rem}.w-20{width:5rem}.w-3{width:.75rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-8{width:2rem}.w-9{width:2.25rem}.w-full{width:100%}.min-w-0{min-width:0}.max-w-4xl{max-width:56rem}.max-w-\[500px\]{max-width:500px}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.max-w-xs{max-width:20rem}.flex-1{flex:1 1 0%}.flex-shrink{flex-shrink:1}.flex-grow{flex-grow:1}.-translate-x-1\/2{--tw-translate-x:-50%}.-translate-x-1\/2,.-translate-y-2{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-2{--tw-translate-y:-0.5rem}.translate-y-2{--tw-translate-y:0.5rem}.transform,.translate-y-2{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes bounce{0%,to{transform:translateY(-25%);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,.2,1)}}.animate-bounce{animation:bounce 1s infinite}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}.resize{resize:both}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-0\.5{gap:.125rem}.gap-1\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-2\.5{gap:.625rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.space-y-1>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.25rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.25rem*var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded{border-radius:.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-t{border-top-width:1px}.border-emerald-300{--tw-border-opacity:1;border-color:rgb(110 231 183/var(--tw-border-opacity,1))}.border-rose-300{--tw-border-opacity:1;border-color:rgb(253 164 175/var(--tw-border-opacity,1))}.border-rose-400\/40{border-color:rgba(251,113,133,.4)}.border-sky-200\/70{border-color:rgba(186,230,253,.7)}.border-sky-300\/20{border-color:rgba(125,211,252,.2)}.border-sky-300\/25{border-color:rgba(125,211,252,.25)}.border-sky-300\/30{border-color:rgba(125,211,252,.3)}.border-sky-300\/40{border-color:rgba(125,211,252,.4)}.border-sky-300\/50{border-color:rgba(125,211,252,.5)}.border-sky-300\/60{border-color:rgba(125,211,252,.6)}.border-sky-400\/40{border-color:rgba(56,189,248,.4)}.border-sky-400\/50{border-color:rgba(56,189,248,.5)}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255/var(--tw-border-opacity,1))}.bg-amber-400{--tw-bg-opacity:1;background-color:rgb(251 191 36/var(--tw-bg-opacity,1))}.bg-emerald-400{--tw-bg-opacity:1;background-color:rgb(52 211 153/var(--tw-bg-opacity,1))}.bg-emerald-400\/30{background-color:rgba(52,211,153,.3)}.bg-emerald-600\/95{background-color:rgba(5,150,105,.95)}.bg-rose-500{--tw-bg-opacity:1;background-color:rgb(244 63 94/var(--tw-bg-opacity,1))}.bg-rose-500\/25{background-color:rgba(244,63,94,.25)}.bg-rose-500\/30{background-color:rgba(244,63,94,.3)}.bg-rose-600\/70{background-color:rgba(225,29,72,.7)}.bg-rose-600\/95{background-color:rgba(225,29,72,.95)}.bg-sky-100{--tw-bg-opacity:1;background-color:rgb(224 242 254/var(--tw-bg-opacity,1))}.bg-sky-400{--tw-bg-opacity:1;background-color:rgb(56 189 248/var(--tw-bg-opacity,1))}.bg-sky-400\/20{background-color:rgba(56,189,248,.2)}.bg-sky-400\/30{background-color:rgba(56,189,248,.3)}.bg-sky-500\/30{background-color:rgba(14,165,233,.3)}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59/var(--tw-bg-opacity,1))}.bg-slate-800\/70{background-color:rgba(30,41,59,.7)}.bg-slate-800\/80{background-color:rgba(30,41,59,.8)}.bg-slate-900\/40{background-color:rgba(15,23,42,.4)}.bg-slate-900\/60{background-color:rgba(15,23,42,.6)}.bg-slate-900\/80{background-color:rgba(15,23,42,.8)}.bg-slate-900\/95{background-color:rgba(15,23,42,.95)}.bg-slate-950\/65{background-color:rgba(2,6,23,.65)}.bg-slate-950\/75{background-color:rgba(2,6,23,.75)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right,var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.from-emerald-400{--tw-gradient-from:#34d399 var(--tw-gradient-from-position);--tw-gradient-to:rgba(52,211,153,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-sky-400{--tw-gradient-from:#38bdf8 var(--tw-gradient-from-position);--tw-gradient-to:rgba(56,189,248,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.to-indigo-500{--tw-gradient-to:#6366f1 var(--tw-gradient-to-position)}.to-indigo-600{--tw-gradient-to:#4f46e5 var(--tw-gradient-to-position)}.to-teal-500{--tw-gradient-to:#14b8a6 var(--tw-gradient-to-position)}.p-2{padding:.5rem}.p-2\.5{padding:.625rem}.p-3{padding:.75rem}.p-3\.5{padding:.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-1\.5{padding-left:.375rem;padding-right:.375rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-2\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-3\.5{padding-left:.875rem;padding-right:.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-3\.5{padding-top:.875rem;padding-bottom:.875rem}.pr-1{padding-right:.25rem}.pt-4{padding-top:1rem}.text-left{text-align:left}.text-center{text-align:center}.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.italic{font-style:italic}.tabular-nums{--tw-numeric-spacing:tabular-nums;font-variant-numeric:var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)}.leading-none{line-height:1}.tracking-tight{letter-spacing:-.025em}.tracking-wider{letter-spacing:.05em}.tracking-widest{letter-spacing:.1em}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77/var(--tw-text-opacity,1))}.text-emerald-200{--tw-text-opacity:1;color:rgb(167 243 208/var(--tw-text-opacity,1))}.text-emerald-300{--tw-text-opacity:1;color:rgb(110 231 183/var(--tw-text-opacity,1))}.text-rose-200{--tw-text-opacity:1;color:rgb(254 205 211/var(--tw-text-opacity,1))}.text-sky-100{--tw-text-opacity:1;color:rgb(224 242 254/var(--tw-text-opacity,1))}.text-sky-100\/90{color:rgba(224,242,254,.9)}.text-sky-200{--tw-text-opacity:1;color:rgb(186 230 253/var(--tw-text-opacity,1))}.text-sky-200\/60{color:rgba(186,230,253,.6)}.text-sky-200\/65{color:rgba(186,230,253,.65)}.text-sky-200\/70{color:rgba(186,230,253,.7)}.text-sky-200\/75{color:rgba(186,230,253,.75)}.text-sky-200\/80{color:rgba(186,230,253,.8)}.text-sky-200\/85{color:rgba(186,230,253,.85)}.text-sky-200\/90{color:rgba(186,230,253,.9)}.text-sky-300{--tw-text-opacity:1;color:rgb(125 211 252/var(--tw-text-opacity,1))}.text-sky-300\/50{color:rgba(125,211,252,.5)}.text-sky-300\/60{color:rgba(125,211,252,.6)}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42/var(--tw-text-opacity,1))}.text-slate-950{--tw-text-opacity:1;color:rgb(2 6 23/var(--tw-text-opacity,1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.underline{text-decoration-line:underline}.underline-offset-4{text-underline-offset:4px}.placeholder-sky-300\/40::-moz-placeholder{color:rgba(125,211,252,.4)}.placeholder-sky-300\/40::placeholder{color:rgba(125,211,252,.4)}.opacity-0{opacity:0}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color)}.shadow-2xl,.shadow-inner{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgba(0,0,0,.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.ring{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}.blur{--tw-blur:blur(8px)}.blur,.drop-shadow{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow{--tw-drop-shadow:drop-shadow(0 1px 2px rgba(0,0,0,.1)) drop-shadow(0 1px 1px rgba(0,0,0,.06))}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur{--tw-backdrop-blur:blur(8px)}.backdrop-blur,.backdrop-blur-sm{-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px)}.backdrop-filter{-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.duration-300{transition-duration:.3s}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-amber-300:hover{--tw-bg-opacity:1;background-color:rgb(252 211 77/var(--tw-bg-opacity,1))}.hover\:bg-rose-500\/50:hover{background-color:rgba(244,63,94,.5)}.hover\:bg-sky-300:hover{--tw-bg-opacity:1;background-color:rgb(125 211 252/var(--tw-bg-opacity,1))}.hover\:bg-sky-400\/40:hover{background-color:rgba(56,189,248,.4)}.hover\:bg-sky-500\/50:hover{background-color:rgba(14,165,233,.5)}.hover\:bg-slate-700\/70:hover{background-color:rgba(51,65,85,.7)}.hover\:from-sky-300:hover{--tw-gradient-from:#7dd3fc var(--tw-gradient-from-position);--tw-gradient-to:rgba(125,211,252,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.hover\:to-indigo-400:hover{--tw-gradient-to:#818cf8 var(--tw-gradient-to-position)}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.focus\:border-sky-300:focus{--tw-border-opacity:1;border-color:rgb(125 211 252/var(--tw-border-opacity,1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}@media (min-width:640px){.sm\:flex{display:flex}.sm\:h-12{height:3rem}.sm\:h-7{height:1.75rem}.sm\:w-12{width:3rem}.sm\:w-7{width:1.75rem}.sm\:p-3{padding:.75rem}.sm\:p-5{padding:1.25rem}.sm\:p-8{padding:2rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-sm{font-size:.875rem;line-height:1.25rem}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width:1024px){.lg\:w-72{width:18rem}.lg\:flex-row{flex-direction:row}.lg\:items-start{align-items:flex-start}.lg\:gap-6{gap:1.5rem}}
+    </style>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chess.js for 100% accurate standard chess rules, check, checkmate, castling, en-passant -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <!-- Tone.js for synthesized sound effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <!-- Canvas Confetti for victory celebration -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- PeerJS: WebRTC peer-to-peer data connections (room code = peer ID, no login or backend) -->
+    <script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"></script>
+
+    <style>
+        :root {
+            --sky-light: #7dd3fc;
+            --sky-mid: #38bdf8;
+            --cosmos-blue: #1e3a8a;
+            --galaxy-indigo: #1e1b4b;
+            --sq-light: #e0f2fe;
+            --sq-dark: #0284c7;
+            --sq-highlight: rgba(250, 204, 21, 0.55);
+            --sq-selected: rgba(52, 211, 153, 0.65);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Luminous Sky-to-Galaxy Cosmos Gradient */
+            background: radial-gradient(circle at 20% 15%, #7dd3fc 0%, #38bdf8 22%, #1d4ed8 55%, #1e1b4b 85%, #0f172a 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            color: #f8fafc;
+        }
+
+        h1, h2, h3, .game-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        /* ==========================================
+           COSMIC SKY, GALAXY & PLANETARY BACKDROP
+           ========================================== */
+        .cosmos-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        /* Soft Swirling Nebula Glows */
+        .nebula-1 {
+            position: absolute;
+            width: 65vw;
+            height: 65vw;
+            max-width: 750px;
+            max-height: 750px;
+            top: -15%;
+            right: -10%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(167, 139, 250, 0.35) 0%, rgba(56, 189, 248, 0.15) 50%, transparent 70%);
+            filter: blur(40px);
+            animation: pulseNebula 14s infinite alternate ease-in-out;
+        }
+
+        .nebula-2 {
+            position: absolute;
+            width: 55vw;
+            height: 55vw;
+            max-width: 650px;
+            max-height: 650px;
+            bottom: -10%;
+            left: -10%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.35) 0%, rgba(129, 140, 248, 0.15) 50%, transparent 70%);
+            filter: blur(45px);
+            animation: pulseNebula 18s infinite alternate-reverse ease-in-out;
+        }
+
+        @keyframes pulseNebula {
+            0% { transform: scale(1) rotate(0deg); opacity: 0.75; }
+            100% { transform: scale(1.12) rotate(12deg); opacity: 1; }
+        }
+
+        /* Ringed Saturn-like Sky Planet */
+        .planet-saturn {
+            position: absolute;
+            top: 8%;
+            left: 6%;
+            width: clamp(70px, 10vw, 120px);
+            height: clamp(70px, 10vw, 120px);
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #bae6fd 0%, #38bdf8 45%, #1e40af 100%);
+            box-shadow: 0 0 35px rgba(125, 211, 252, 0.45), inset -10px -10px 20px rgba(15, 23, 42, 0.6);
+            animation: floatPlanet 9s infinite ease-in-out;
+        }
+
+        .planet-saturn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 175%;
+            height: 36%;
+            border: 5px solid rgba(186, 230, 253, 0.65);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) rotate(-22deg);
+            box-shadow: 0 0 12px rgba(186, 230, 253, 0.4);
+        }
+
+        /* Distant Glowing Moon / Exoplanet */
+        .planet-moon {
+            position: absolute;
+            bottom: 12%;
+            right: 7%;
+            width: clamp(55px, 8vw, 95px);
+            height: clamp(55px, 8vw, 95px);
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 25%, #fef08a 0%, #f59e0b 55%, #78350f 100%);
+            box-shadow: 0 0 40px rgba(250, 204, 21, 0.4), inset -8px -8px 16px rgba(15, 23, 42, 0.55);
+            animation: floatPlanet 12s infinite reverse ease-in-out;
+        }
+
+        @keyframes floatPlanet {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-14px); }
+        }
+
+        /* Twinkling Stars Canvas */
+        #starfield-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ==========================================
+           GLASSMORPHISM & UI ELEMENTS
+           ========================================== */
+        .cosmic-card {
+            background: rgba(15, 23, 42, 0.52);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1.5px solid rgba(186, 230, 253, 0.35);
+            box-shadow: 0 16px 36px -8px rgba(2, 6, 23, 0.55);
+        }
+
+        .btn-cosmic {
+            transition: all 0.16s ease;
+            box-shadow: 0 4px 0 rgba(7, 89, 133, 0.65);
+        }
+        .btn-cosmic:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 rgba(7, 89, 133, 0.65);
+        }
+        .btn-cosmic:active:not(:disabled) {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 rgba(7, 89, 133, 0.65);
+        }
+        .btn-cosmic:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* ==========================================
+           CHESS BOARD & PIECES STYLING
+           ========================================== */
+        .chess-board-frame {
+            background: linear-gradient(135deg, rgba(125, 211, 252, 0.4), rgba(30, 58, 138, 0.7));
+            border: 3px solid rgba(186, 230, 253, 0.65);
+            box-shadow: 
+                0 20px 50px rgba(2, 6, 23, 0.75),
+                0 0 30px rgba(56, 189, 248, 0.35);
+        }
+
+        .chess-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            aspect-ratio: 1 / 1;
+            width: 100%;
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+
+        .square {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.15s ease;
+        }
+
+        .sq-light {
+            background-color: #e0f2fe;
+        }
+
+        .sq-dark {
+            background-color: #0284c7;
+        }
+
+        .square.selected {
+            background-color: #34d399 !important;
+        }
+
+        .square.last-move {
+            box-shadow: inset 0 0 0 100px rgba(250, 204, 21, 0.38);
+        }
+
+        .square.in-check {
+            background: radial-gradient(circle, #ef4444 15%, #b91c1c 85%) !important;
+            animation: pulseCheck 1s infinite alternate;
+        }
+
+        @keyframes pulseCheck {
+            from { filter: brightness(1); }
+            to { filter: brightness(1.3); }
+        }
+
+        /* Legal Move Dot & Capture Ring */
+        .legal-dot {
+            width: 30%;
+            height: 30%;
+            border-radius: 50%;
+            background-color: rgba(15, 23, 42, 0.32);
+            pointer-events: none;
+            transition: transform 0.12s ease;
+        }
+
+        .square:hover .legal-dot {
+            transform: scale(1.25);
+            background-color: rgba(16, 185, 129, 0.75);
+        }
+
+        .legal-capture {
+            position: absolute;
+            inset: 8%;
+            border-radius: 50%;
+            border: 4px solid rgba(239, 68, 68, 0.75);
+            pointer-events: none;
+        }
+
+        /* Coordinate Labels on Edge Squares */
+        .coord-rank {
+            position: absolute;
+            top: 2px;
+            left: 3px;
+            font-size: clamp(8px, 1.8vw, 11px);
+            font-weight: 700;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .coord-file {
+            position: absolute;
+            bottom: 2px;
+            right: 3px;
+            font-size: clamp(8px, 1.8vw, 11px);
+            font-weight: 700;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .sq-light .coord-rank, .sq-light .coord-file { color: #0369a1; }
+        .sq-dark .coord-rank, .sq-dark .coord-file { color: #e0f2fe; }
+
+        /* Crisp SVG Chess Piece Wrapper */
+        .piece-svg {
+            width: 82%;
+            height: 82%;
+            pointer-events: none;
+            filter: drop-shadow(0 3px 3px rgba(2, 6, 23, 0.45));
+            transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .square:hover .piece-svg {
+            transform: translateY(-2px) scale(1.05);
+        }
+        select option { color: #0f172a; background: #ffffff; }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-between p-3 sm:p-5">
+
+    <!-- Cosmic Sky, Galaxy & Planetary Background -->
+    <div class="cosmos-bg" aria-hidden="true">
+        <canvas id="starfield-canvas"></canvas>
+        <div class="nebula-1"></div>
+        <div class="nebula-2"></div>
+        <div class="planet-saturn"></div>
+        <div class="planet-moon"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="relative z-10 w-full max-w-4xl flex items-center justify-between gap-2 mb-3">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-indigo-600 flex items-center justify-center shadow-lg border border-sky-200/70">
+                <!-- Custom Crown/Knight Emblem -->
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+                </svg>
+            </div>
+            <div>
+                <h1 class="text-xl sm:text-2xl font-bold text-white tracking-tight leading-none drop-shadow">Cosmic Chess</h1>
+                <p class="text-xs sm:text-sm font-medium text-sky-200">Sky & Galaxy Arena • Instant Online</p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <!-- Connection Status Badge -->
+            <div id="conn-badge" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full cosmic-card text-xs font-semibold text-sky-100">
+                <span id="conn-dot" class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+                <span id="conn-text">Connecting...</span>
+            </div>
+
+            <!-- Sound Toggle -->
+            <button id="btn-sound" title="Toggle Sound" class="btn-cosmic p-2.5 rounded-xl bg-sky-500/30 hover:bg-sky-500/50 text-white border border-sky-300/40 backdrop-blur">
+                <svg id="icon-sound-on" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"/>
+                </svg>
+                <svg id="icon-sound-off" class="w-5 h-5 hidden text-sky-300/60" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/>
+                </svg>
+            </button>
+
+            <!-- Back to Lobby -->
+            <button id="btn-lobby" class="hidden btn-cosmic px-3.5 py-2 rounded-xl bg-sky-500/30 hover:bg-sky-500/50 text-white text-xs sm:text-sm font-bold border border-sky-300/40 backdrop-blur">
+                Lobby
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="relative z-10 w-full max-w-4xl flex-1 flex flex-col items-center justify-center my-auto">
+
+        <!-- VIEW 1: COSMIC LOBBY (NO LOGIN REQUIRED) -->
+        <section id="view-lobby" class="w-full max-w-md cosmic-card rounded-3xl p-6 sm:p-8 text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-sky-400/20 border border-sky-300/40 text-sky-200 mb-4 shadow-inner">
+                <svg class="w-9 h-9" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-1">Galactic Chess Match</h2>
+            <p class="text-sm text-sky-200/85 mb-6">Play live online across the universe with zero login. Create a room, share the code, and play directly browser to browser.</p>
+
+            <!-- Nickname Field -->
+            <div class="mb-5 text-left">
+                <label for="input-nickname" class="block text-xs font-bold uppercase tracking-wider text-sky-200/80 mb-1.5 ml-1">Commander Name (Optional)</label>
+                <input type="text" id="input-nickname" maxlength="16" placeholder="e.g. NovaKnight" 
+                    class="w-full px-4 py-3 rounded-2xl bg-slate-900/60 border border-sky-300/40 focus:border-sky-300 focus:outline-none text-white font-semibold placeholder-sky-300/40 transition">
+            </div>
+
+            <!-- Per-player clocks: each player's total time bank, with an optional bonus after every move. -->
+            <div class="mb-5 text-left">
+                <p class="block text-xs font-bold uppercase tracking-wider text-sky-200/80 mb-1.5 ml-1">Time per player</p>
+                <div class="grid grid-cols-2 gap-2.5">
+                <div>
+                    <label for="select-time-w" class="flex items-center gap-1.5 text-xs font-bold text-sky-100 mb-1 ml-1">
+                        <span class="w-3 h-3 rounded-full bg-sky-100 border border-white"></span>White (you, the host)
+                    </label>
+                    <select id="select-time-w" class="w-full px-3 py-2.5 rounded-2xl bg-slate-900/60 border border-sky-300/40 focus:border-sky-300 focus:outline-none text-white font-semibold text-sm">
+                            <option value="0">No timer</option>
+                            <option value="30">30 seconds</option>
+                            <option value="60">1 minute</option>
+                            <option value="180">3 minutes</option>
+                            <option value="300">5 minutes</option>
+                            <option value="600" selected>10 minutes</option>
+                            <option value="900">15 minutes</option>
+                            <option value="1800">30 minutes</option>
+                            <option value="3600">60 minutes</option>
+                            <option value="custom">Custom...</option>
+                    </select>
+                    <div id="custom-wrap-w" class="hidden mt-1.5">
+                        <input type="number" id="custom-time-w" min="5" max="10800" value="90" inputmode="numeric" aria-label="Custom seconds for White (you, the host)"
+                            class="w-full px-3 py-2.5 rounded-2xl bg-slate-900/60 border border-sky-300/40 focus:border-sky-300 focus:outline-none text-white font-semibold text-sm">
+                        <p class="text-[11px] text-sky-200/60 mt-1 ml-1">Seconds (5 to 10800)</p>
+                    </div>
+                    <select id="select-inc-w" aria-label="Bonus time per move for White (you, the host)" class="w-full px-3 py-2.5 rounded-2xl bg-slate-900/60 border border-sky-300/40 focus:border-sky-300 focus:outline-none text-white font-semibold text-sm mt-1.5">
+                            <option value="0">No bonus</option>
+                            <option value="1">+1 s per move</option>
+                            <option value="2">+2 s per move</option>
+                            <option value="3">+3 s per move</option>
+                            <option value="5">+5 s per move</option>
+                            <option value="10">+10 s per move</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="select-time-b" class="flex items-center gap-1.5 text-xs font-bold text-sky-200 mb-1 ml-1">
+                        <span class="w-3 h-3 rounded-full bg-slate-800 border border-sky-300/60"></span>Black (friend)
+                    </label>
+                    <select id="select-time-b" class="w-full px-3 py-2.5 rounded-2xl bg-slate-900/60 border border-sky-300/40 focus:border-sky-300 focus:outline-none text-white font-semibold text-sm">
+                            <option value="0">No timer</option>
+                            <option value="30">30 seconds</option>
+                            <option value="60">1 minute</option>
+                            <option value="180">3 minutes</option>
+                            <option value="300">5 minutes</option>
+                            <option value="600" selected>10 minutes</option>
+                            <option value="900">15 minutes</option>
+                            <option value="1800">30 minutes</option>
+                            <option value="3600">60 minutes</option>
+                            <option value="custom">Custom...</option>
+                    </select>
+                    <div id="custom-wrap-b" class="hidden mt-1.5">
+                        <input type="number" id="custom-time-b" min="5" max="10800" value="90" inputmode="numeric" aria-label="Custom seconds for Black (friend)"
+                            class="w-full px-3 py-2.5 rounded-2xl bg-slate-900/60 border border-sky-300/40 focus:border-sky-300 focus:outline-none text-white font-semibold text-sm">
+                        <p class="text-[11px] text-sky-200/60 mt-1 ml-1">Seconds (5 to 10800)</p>
+                    </div>
+                    <select id="select-inc-b" aria-label="Bonus time per move for Black (friend)" class="w-full px-3 py-2.5 rounded-2xl bg-slate-900/60 border border-sky-300/40 focus:border-sky-300 focus:outline-none text-white font-semibold text-sm mt-1.5">
+                            <option value="0">No bonus</option>
+                            <option value="1">+1 s per move</option>
+                            <option value="2">+2 s per move</option>
+                            <option value="3">+3 s per move</option>
+                            <option value="5">+5 s per move</option>
+                            <option value="10">+10 s per move</option>
+                    </select>
+                </div>
+                </div>
+                <p class="text-[11px] text-sky-200/60 mt-1.5 ml-1">Set when you create a room. Your friend sees both clocks automatically.</p>
+            </div>
+
+            <!-- Create Room Button -->
+            <button id="btn-create-room" class="btn-cosmic w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-sky-400 to-indigo-500 hover:from-sky-300 hover:to-indigo-400 text-slate-950 font-extrabold text-lg shadow-lg flex items-center justify-center gap-2 mb-5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+                <span>Create Online Room</span>
+            </button>
+
+            <div class="relative flex py-2 items-center mb-5">
+                <div class="flex-grow border-t border-sky-300/25"></div>
+                <span class="flex-shrink mx-3 text-xs font-bold uppercase tracking-wider text-sky-200/70">Or Join Room</span>
+                <div class="flex-grow border-t border-sky-300/25"></div>
+            </div>
+
+            <!-- Join Room Input -->
+            <div class="flex gap-2">
+                <input type="text" id="input-room-code" maxlength="6" placeholder="CODE" 
+                    class="flex-1 px-4 py-3 rounded-2xl bg-slate-900/60 border border-sky-300/40 focus:border-sky-300 focus:outline-none text-center uppercase tracking-widest font-bold text-lg text-white placeholder-sky-300/40">
+                <button id="btn-join-room" class="btn-cosmic px-6 py-3 rounded-2xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-base">
+                    Join
+                </button>
+            </div>
+
+            <!-- Pass & Play Fallback -->
+            <div class="mt-6 pt-4 border-t border-sky-300/20">
+                <button id="btn-local-mode" class="text-xs font-semibold text-sky-200 hover:text-white underline underline-offset-4">
+                    Play Offline Pass & Play (2 Players on 1 Device)
+                </button>
+            </div>
+        </section>
+
+        <!-- VIEW 2: ACTIVE CHESS ARENA -->
+        <section id="view-game" class="hidden w-full flex flex-col lg:flex-row items-center lg:items-start justify-center gap-4 lg:gap-6">
+
+            <!-- LEFT / CENTER: CHESS BOARD AREA -->
+            <div class="w-full max-w-[500px] flex flex-col items-center">
+
+                <!-- Top Opponent Info Bar -->
+                <div id="bar-top-player" class="w-full cosmic-card rounded-2xl p-2.5 sm:p-3 mb-2.5 flex items-center justify-between border border-sky-300/30">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <div id="avatar-top" class="w-9 h-9 rounded-xl bg-slate-800 border border-sky-300/40 flex items-center justify-center font-bold text-sm">♚</div>
+                        <div class="min-w-0">
+                            <div class="flex items-center gap-1.5">
+                                <span id="name-top" class="font-bold text-sm sm:text-base text-white truncate">Waiting...</span>
+                                <span id="badge-top" class="hidden px-1.5 py-0.5 text-[10px] font-extrabold uppercase bg-sky-400/30 text-sky-200 rounded">You</span>
+                            </div>
+                            <div id="captured-top" class="flex items-center gap-0.5 h-4 text-xs text-sky-200/90 overflow-hidden"></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span id="timer-top" class="game-font text-sm sm:text-base font-bold px-2 py-0.5 rounded-lg tabular-nums bg-slate-800/80 text-sky-200 border border-sky-300/30">⏱ ∞</span>
+                        <span id="turn-pill-top" class="hidden px-2.5 py-1 rounded-full bg-emerald-400 text-slate-950 text-xs font-extrabold animate-pulse">TURN</span>
+                        <span id="score-top" class="game-font text-xl font-bold text-sky-200 px-2">0</span>
+                    </div>
+                </div>
+
+                <!-- 8x8 CHESS BOARD -->
+                <div class="w-full chess-board-frame rounded-2xl p-2 sm:p-3 relative">
+                    <div id="chess-board" class="chess-grid">
+                        <!-- 64 Squares generated via JS -->
+                    </div>
+
+                    <!-- Waiting for Opponent Overlay -->
+                    <div id="waiting-overlay" class="hidden absolute inset-0 rounded-2xl bg-slate-950/65 backdrop-blur-sm flex flex-col items-center justify-center p-5 text-center z-20">
+                        <div class="cosmic-card rounded-3xl p-6 max-w-xs w-full border border-sky-300/50">
+                            <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-sky-400/20 text-sky-300 flex items-center justify-center animate-bounce">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-1">Awaiting Challenger</h3>
+                            <p class="text-xs text-sky-200/80 mb-3">Send this room code or invite link to a friend anywhere on Earth:</p>
+                            <div id="overlay-room-code" class="bg-slate-900/80 border border-sky-400/40 rounded-xl py-2 px-3 mb-4 font-mono text-2xl font-extrabold tracking-widest text-sky-300">
+                                ------
+                            </div>
+                            <button id="btn-overlay-link" class="btn-cosmic w-full py-2.5 px-4 rounded-xl bg-sky-400 hover:bg-sky-300 text-slate-950 font-extrabold text-sm">
+                                Copy Invite Link
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Pawn Promotion Modal Overlay -->
+                    <div id="promotion-overlay" class="hidden absolute inset-0 rounded-2xl bg-slate-950/75 backdrop-blur-sm flex flex-col items-center justify-center p-4 z-30">
+                        <div class="cosmic-card rounded-2xl p-5 text-center">
+                            <h3 class="text-base font-bold text-white mb-3">Promote Pawn To:</h3>
+                            <div class="grid grid-cols-4 gap-2.5" id="promotion-choices">
+                                <!-- Queen, Rook, Bishop, Knight buttons injected via JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Player Info Bar -->
+                <div id="bar-bottom-player" class="w-full cosmic-card rounded-2xl p-2.5 sm:p-3 mt-2.5 flex items-center justify-between border border-sky-300/30">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <div id="avatar-bottom" class="w-9 h-9 rounded-xl bg-sky-100 text-slate-900 border border-white flex items-center justify-center font-bold text-sm">♔</div>
+                        <div class="min-w-0">
+                            <div class="flex items-center gap-1.5">
+                                <span id="name-bottom" class="font-bold text-sm sm:text-base text-white truncate">Player 1</span>
+                                <span id="badge-bottom" class="hidden px-1.5 py-0.5 text-[10px] font-extrabold uppercase bg-emerald-400/30 text-emerald-200 rounded">You</span>
+                            </div>
+                            <div id="captured-bottom" class="flex items-center gap-0.5 h-4 text-xs text-sky-200/90 overflow-hidden"></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span id="timer-bottom" class="game-font text-sm sm:text-base font-bold px-2 py-0.5 rounded-lg tabular-nums bg-slate-800/80 text-sky-200 border border-sky-300/30">⏱ ∞</span>
+                        <span id="turn-pill-bottom" class="hidden px-2.5 py-1 rounded-full bg-emerald-400 text-slate-950 text-xs font-extrabold animate-pulse">YOUR TURN</span>
+                        <span id="score-bottom" class="game-font text-xl font-bold text-sky-200 px-2">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT PANEL: STATUS, INVITE & MOVE HISTORY -->
+            <div class="w-full max-w-[500px] lg:w-72 flex flex-col gap-3">
+
+                <!-- Room Share Card -->
+                <div id="invite-card" class="cosmic-card rounded-2xl p-3.5">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-sky-200/80">Room Code</span>
+                        <span id="display-room-code" class="font-mono font-extrabold text-base tracking-widest text-amber-300">------</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button id="btn-copy-code" class="btn-cosmic py-2 px-3 rounded-xl bg-sky-500/30 hover:bg-sky-500/50 border border-sky-300/30 text-xs font-bold text-white">
+                            Copy Code
+                        </button>
+                        <button id="btn-copy-link" class="btn-cosmic py-2 px-3 rounded-xl bg-sky-400 hover:bg-sky-300 text-xs font-extrabold text-slate-950">
+                            Invite Link
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Game Status Banner -->
+                <div class="cosmic-card rounded-2xl p-4 text-center">
+                    <div id="status-title" class="game-font text-lg sm:text-xl font-bold text-white mb-1">White's Turn</div>
+                    <p id="status-subtitle" class="text-xs text-sky-200/85">Select a piece to view legal moves</p>
+
+                    <!-- Action Buttons (Flip Board / Rematch / Resign) -->
+                    <div class="mt-4 flex flex-col gap-2">
+                        <button id="btn-rematch" class="hidden btn-cosmic w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-500 text-slate-950 font-extrabold text-sm">
+                            <span id="rematch-text">Play Rematch</span>
+                        </button>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button id="btn-flip" class="btn-cosmic py-2 px-3 rounded-xl bg-slate-800/70 hover:bg-slate-700/70 border border-sky-300/30 text-xs font-bold text-sky-100">
+                                Flip View
+                            </button>
+                            <button id="btn-resign" class="btn-cosmic py-2 px-3 rounded-xl bg-rose-500/30 hover:bg-rose-500/50 border border-rose-400/40 text-xs font-bold text-rose-200">
+                                Resign
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Move Log -->
+                <div class="cosmic-card rounded-2xl p-3.5 hidden sm:flex flex-col h-52">
+                    <div class="text-xs font-bold uppercase tracking-wider text-sky-200/75 mb-2 flex justify-between">
+                        <span>Flight Log (Moves)</span>
+                        <span id="move-count" class="text-sky-300">0</span>
+                    </div>
+                    <div id="move-history" class="flex-1 overflow-y-auto space-y-1 text-xs font-mono pr-1 text-sky-100/90">
+                        <div class="text-sky-300/50 italic">Game moves will appear here...</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Custom Toast Notification Box -->
+    <div id="toast-container" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 pointer-events-none flex flex-col items-center gap-2 w-full max-w-sm px-4"></div>
+
+    <!-- Footer -->
+    <footer class="relative z-10 text-center text-xs font-medium text-sky-200/65 mt-3">
+        Standard Chess Rules • Castling, En Passant & Pawn Promotion Supported
+    </footer>
+
+
+    <!-- WebRTC (PeerJS) peer-to-peer multiplayer + per-player chess clocks -->
+    <script>
+        // ==========================================
+        // 1. ANIMATED STARFIELD BACKGROUND CANVAS
+        // ==========================================
+        function initStarfield() {
+            const canvas = document.getElementById('starfield-canvas');
+            const ctx = canvas.getContext('2d');
+            let stars = [];
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                stars = Array.from({ length: 110 }, () => ({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    r: Math.random() * 1.8 + 0.4,
+                    alpha: Math.random(),
+                    speed: (Math.random() * 0.015 + 0.005) * (Math.random() < 0.5 ? 1 : -1)
+                }));
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (const s of stars) {
+                    s.alpha += s.speed;
+                    if (s.alpha >= 1 || s.alpha <= 0.15) s.speed *= -1;
+                    ctx.beginPath();
+                    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 255, 255, ${s.alpha})`;
+                    ctx.fill();
+                }
+                requestAnimationFrame(draw);
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+            draw();
+        }
+
+        // ==========================================
+        // 2. CRISP VECTOR CHESS PIECES (INLINE SVG)
+        // ==========================================
+        const PIECE_SVGS = {
+            wP: `<svg class="piece-svg" viewBox="0 0 45 45"><path d="M22.5 9c-2.21 0-4 1.79-4 4 0 .89.29 1.71.78 2.38C17.33 16.5 16 18.59 16 21c0 2.03.94 3.84 2.41 5.03-3 1.06-7.41 5.55-7.41 13.47h23c0-7.92-4.41-12.41-7.41-13.47 1.47-1.19 2.41-3 2.41-5.03 0-2.41-1.33-4.5-3.28-5.62.49-.67.78-1.49.78-2.38 0-2.21-1.79-4-4-4z" fill="#ffffff" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/></svg>`,
+            wR: `<svg class="piece-svg" viewBox="0 0 45 45"><g fill="#ffffff" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 39h27v-3H9v3zM12 36v-4h21v4H12zM11 14V9h4v2h5V9h5v2h5V9h4v5"/><path d="M34 14l-3 3H14l-3-3"/><path d="M31 17v12.5H14V17"/><path d="M31 29.5l1.5 2.5h-20l1.5-2.5"/><path d="M11 14h23" fill="none"/></g></svg>`,
+            wN: `<svg class="piece-svg" viewBox="0 0 45 45"><g fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M 22,10 C 32.5,11 38.5,18 38,39 L 15,39 C 15,30 25,32.5 23,18" fill="#ffffff"/><path d="M 24,18 C 24.38,20.91 18.45,25.37 16,27 C 13,29 13.18,31.34 11,31 C 9.958,30.06 12.41,27.96 11,28 C 10,28 11.19,29.23 10,30 C 9,30 5.997,31 6,26 C 6,24 12,14 12,14 C 12,14 13.89,12.1 14,10.5 C 13.27,9.506 13.5,8.5 13.5,7.5 C 14.5,6.5 16.5,10 16.5,10 L 18.5,10 C 18.5,10 19.28,8.008 21,7 C 22,7 22,10 22,10" fill="#ffffff"/><circle cx="14.5" cy="15.5" r="1.2" fill="#0f172a"/></g></svg>`,
+            wB: `<svg class="piece-svg" viewBox="0 0 45 45"><g fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g fill="#ffffff"><path d="M9 36c3.39-.97 10.11.43 13.5-2 3.39 2.43 10.11 1.03 13.5 2 0 0 1.65.54 3 2-.68.97-1.65.99-3 .5-3.39-.97-10.11.46-13.5-1-3.39 1.46-10.11.03-13.5 1-1.354.49-2.323.47-3-.5 1.354-1.94 3-2 3-2z"/><path d="M15 32c2.5 2.5 12.5 2.5 15 0 .5-1.5 0-2 0-2 0-2.5-2.5-4-2.5-4 5.5-1.5 6-11.5-5-15.5-11 4-10.5 14-5 15.5 0 0-2.5 1.5-2.5 4 0 0-.5.5 0 2z"/><circle cx="22.5" cy="8" r="2.5"/></g><path d="M17.5 26h10M15 30h15m-7.5-14.5v5M20 18h5"/></g></svg>`,
+            wQ: `<svg class="piece-svg" viewBox="0 0 45 45"><g fill="#ffffff" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2.2"/><circle cx="14" cy="9" r="2.2"/><circle cx="22.5" cy="8" r="2.2"/><circle cx="31" cy="9" r="2.2"/><circle cx="39" cy="12" r="2.2"/><path d="M9 26c8.5-1.5 21-1.5 27 0l2-12-7 11V11l-5.5 13.5-3-15-3 15-5.5-14V25L7 14l2 12z"/><path d="M9 26c0 2 1.5 2 2.5 4 1 1.5 1 1 .5 3.5-1.5 1-1.5 2.5-1.5 2.5-1.5 1.5.5 2.5.5 2.5 6.5 1 16.5 1 23 0 0 0 1.5-1 0-2.5 0 0 .5-1.5-1-2.5-.5-2.5-.5-2 .5-3.5 1-2 2.5-2 2.5-4-8.5-1.5-18.5-1.5-27 0z"/></g></svg>`,
+            wK: `<svg class="piece-svg" viewBox="0 0 45 45"><g fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.5 11.63V6M20 8h5"/><path d="M22.5 25s4.5-7.5 3-10.5c0 0-1-2.5-3-2.5s-3 2.5-3 2.5c-1.5 3 3 10.5 3 10.5" fill="#ffffff"/><path d="M11.5 37c5.5 3.5 15.5 3.5 21 0v-7s9-4.5 6-10.5c-4-6.5-13.5-3.5-16 4V27v-3.5c-3.5-7.5-13-10.5-16-4-3 6 5 10 5 10V37z" fill="#ffffff"/><path d="M11.5 30c5.5-3 15.5-3 21 0m-21 3.5c5.5-3 15.5-3 21 0m-21 3.5c5.5-3 15.5-3 21 0"/></g></svg>`,
+            bP: `<svg class="piece-svg" viewBox="0 0 45 45"><path d="M22.5 9c-2.21 0-4 1.79-4 4 0 .89.29 1.71.78 2.38C17.33 16.5 16 18.59 16 21c0 2.03.94 3.84 2.41 5.03-3 1.06-7.41 5.55-7.41 13.47h23c0-7.92-4.41-12.41-7.41-13.47 1.47-1.19 2.41-3 2.41-5.03 0-2.41-1.33-4.5-3.28-5.62.49-.67.78-1.49.78-2.38 0-2.21-1.79-4-4-4z" fill="#1e293b" stroke="#bae6fd" stroke-width="1.6" stroke-linecap="round"/></svg>`,
+            bR: `<svg class="piece-svg" viewBox="0 0 45 45"><g fill="#1e293b" stroke="#bae6fd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 39h27v-3H9v3zM12.5 32l1.5-2.5h17l1.5 2.5h-20zM12 36v-4h21v4H12z"/><path d="M14 29.5v-13h17v13H14z"/><path d="M14 16.5L11 14h23l-3 2.5H14zM11 14V9h4v2h5V9h5v2h5V9h4v5H11z"/></g></svg>`,
+            bN: `<svg class="piece-svg" viewBox="0 0 45 45"><g fill="none" stroke="#bae6fd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M 22,10 C 32.5,11 38.5,18 38,39 L 15,39 C 15,30 25,32.5 23,18" fill="#1e293b"/><path d="M 24,18 C 24.38,20.91 18.45,25.37 16,27 C 13,29 13.18,31.34 11,31 C 9.958,30.06 12.41,27.96 11,28 C 10,28 11.19,29.23 10,30 C 9,30 5.997,31 6,26 C 6,24 12,14 12,14 C 12,14 13.89,12.1 14,10.5 C 13.27,9.506 13.5,8.5 13.5,7.5 C 14.5,6.5 16.5,10 16.5,10 L 18.5,10 C 18.5,10 19.28,8.008 21,7 C 22,7 22,10 22,10" fill="#1e293b"/><circle cx="14.5" cy="15.5" r="1.2" fill="#bae6fd"/></g></svg>`,
+            bB: `<svg class="piece-svg" viewBox="0 0 45 45"><g fill="none" stroke="#bae6fd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><g fill="#1e293b"><path d="M9 36c3.39-.97 10.11.43 13.5-2 3.39 2.43 10.11 1.03 13.5 2 0 0 1.65.54 3 2-.68.97-1.65.99-3 .5-3.39-.97-10.11.46-13.5-1-3.39 1.46-10.11.03-13.5 1-1.354.49-2.323.47-3-.5 1.354-1.94 3-2 3-2z"/><path d="M15 32c2.5 2.5 12.5 2.5 15 0 .5-1.5 0-2 0-2 0-2.5-2.5-4-2.5-4 5.5-1.5 6-11.5-5-15.5-11 4-10.5 14-5 15.5 0 0-2.5 1.5-2.5 4 0 0-.5.5 0 2z"/><circle cx="22.5" cy="8" r="2.5"/></g><path d="M17.5 26h10M15 30h15m-7.5-14.5v5M20 18h5"/></g></svg>`,
+            bQ: `<svg class="piece-svg" viewBox="0 0 45 45"><g fill="#1e293b" stroke="#bae6fd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2.2"/><circle cx="14" cy="9" r="2.2"/><circle cx="22.5" cy="8" r="2.2"/><circle cx="31" cy="9" r="2.2"/><circle cx="39" cy="12" r="2.2"/><path d="M9 26c8.5-1.5 21-1.5 27 0l2-12-7 11V11l-5.5 13.5-3-15-3 15-5.5-14V25L7 14l2 12z"/><path d="M9 26c0 2 1.5 2 2.5 4 1 1.5 1 1 .5 3.5-1.5 1-1.5 2.5-1.5 2.5-1.5 1.5.5 2.5.5 2.5 6.5 1 16.5 1 23 0 0 0 1.5-1 0-2.5 0 0 .5-1.5-1-2.5-.5-2.5-.5-2 .5-3.5 1-2 2.5-2 2.5-4-8.5-1.5-18.5-1.5-27 0z"/></g></svg>`,
+            bK: `<svg class="piece-svg" viewBox="0 0 45 45"><g fill="none" stroke="#bae6fd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22.5 11.63V6M20 8h5"/><path d="M22.5 25s4.5-7.5 3-10.5c0 0-1-2.5-3-2.5s-3 2.5-3 2.5c-1.5 3 3 10.5 3 10.5" fill="#1e293b"/><path d="M11.5 37c5.5 3.5 15.5 3.5 21 0v-7s9-4.5 6-10.5c-4-6.5-13.5-3.5-16 4V27v-3.5c-3.5-7.5-13-10.5-16-4-3 6 5 10 5 10V37z" fill="#1e293b"/><path d="M11.5 30c5.5-3 15.5-3 21 0m-21 3.5c5.5-3 15.5-3 21 0m-21 3.5c5.5-3 15.5-3 21 0"/></g></svg>`
+        };
+
+        // ==========================================
+        // 3. CONFIG & GAME STATE (WEBRTC / PEERJS)
+        // ==========================================
+        // Room code = PeerJS ID (prefixed so it can't clash with other apps on the free public server)
+        const PEER_PREFIX = 'cchess-';
+
+        // STUN lets browsers find their public address. Works on most home/Wi-Fi networks.
+        // Some strict networks (certain mobile carriers, corporate Wi-Fi) also need a TURN relay.
+        // If a friend can never connect, add a TURN server below, e.g.:
+        // { urls: 'turn:YOUR_TURN_HOST:443', username: 'USER', credential: 'PASS' }
+        const ICE_SERVERS = [
+            { urls: 'stun:stun.l.google.com:19302' },
+            { urls: 'stun:stun1.l.google.com:19302' },
+            { urls: 'stun:global.stun.twilio.com:3478' }
+        ];
+        const PEER_OPTIONS = { config: { iceServers: ICE_SERVERS } };
+
+        let peer = null;       // PeerJS instance
+        let conn = null;       // Data connection to the opponent
+        let netTimeout = null;
+        let pingTimer = null;
+        let lastSeen = 0;      // Host: last time a message arrived from the guest
+
+        // Chess.js engine. The host's copy is the source of truth; the guest's copy is loaded from the host's FEN.
+        const chess = new Chess();
+
+        let state = {
+            mode: 'online',         // 'online' | 'local'
+            isHost: false,          // Host (White) validates moves and runs the clocks
+            roomId: null,
+            playerColor: 'w',       // 'w' (host) | 'b' (guest)
+            orientation: 'w',
+            selectedSquare: null,
+            legalTargets: [],
+            pendingPromotion: null,
+            lastMove: null,
+            status: 'lobby',        // 'lobby' | 'waiting' | 'playing' | 'ended'
+            resultText: '',
+            winnerColor: null,
+            white: { name: 'White', score: 0 },
+            black: { name: 'Waiting...', score: 0 },
+            rematch: { w: false, b: false },
+            history: [],
+            initial: { w: null, b: null },  // starting time in ms (null = no timer)
+            inc: { w: 0, b: 0 },            // seconds added after each move, in ms
+            clocks: { w: null, b: null },   // remaining ms, valid at clockRef
+            clockRef: Date.now(),
+            started: false,
+            soundEnabled: true,
+            isSubmittingMove: false
+        };
+
+        const els = {
+            viewLobby: document.getElementById('view-lobby'),
+            viewGame: document.getElementById('view-game'),
+            connBadge: document.getElementById('conn-badge'),
+            connDot: document.getElementById('conn-dot'),
+            connText: document.getElementById('conn-text'),
+            btnSound: document.getElementById('btn-sound'),
+            iconSoundOn: document.getElementById('icon-sound-on'),
+            iconSoundOff: document.getElementById('icon-sound-off'),
+            btnLobby: document.getElementById('btn-lobby'),
+            inputNickname: document.getElementById('input-nickname'),
+            btnCreateRoom: document.getElementById('btn-create-room'),
+            inputRoomCode: document.getElementById('input-room-code'),
+            btnJoinRoom: document.getElementById('btn-join-room'),
+            btnLocalMode: document.getElementById('btn-local-mode'),
+            chessBoard: document.getElementById('chess-board'),
+            waitingOverlay: document.getElementById('waiting-overlay'),
+            overlayRoomCode: document.getElementById('overlay-room-code'),
+            btnOverlayLink: document.getElementById('btn-overlay-link'),
+            promotionOverlay: document.getElementById('promotion-overlay'),
+            promotionChoices: document.getElementById('promotion-choices'),
+            inviteCard: document.getElementById('invite-card'),
+            displayRoomCode: document.getElementById('display-room-code'),
+            btnCopyCode: document.getElementById('btn-copy-code'),
+            btnCopyLink: document.getElementById('btn-copy-link'),
+            statusTitle: document.getElementById('status-title'),
+            statusSubtitle: document.getElementById('status-subtitle'),
+            btnRematch: document.getElementById('btn-rematch'),
+            rematchText: document.getElementById('rematch-text'),
+            btnFlip: document.getElementById('btn-flip'),
+            btnResign: document.getElementById('btn-resign'),
+            moveHistory: document.getElementById('move-history'),
+            moveCount: document.getElementById('move-count'),
+            // Top & Bottom Player bars
+            avatarTop: document.getElementById('avatar-top'),
+            nameTop: document.getElementById('name-top'),
+            badgeTop: document.getElementById('badge-top'),
+            capturedTop: document.getElementById('captured-top'),
+            turnPillTop: document.getElementById('turn-pill-top'),
+            scoreTop: document.getElementById('score-top'),
+            avatarBottom: document.getElementById('avatar-bottom'),
+            nameBottom: document.getElementById('name-bottom'),
+            badgeBottom: document.getElementById('badge-bottom'),
+            capturedBottom: document.getElementById('captured-bottom'),
+            turnPillBottom: document.getElementById('turn-pill-bottom'),
+            scoreBottom: document.getElementById('score-bottom'),
+            toastContainer: document.getElementById('toast-container'),
+            timerTop: document.getElementById('timer-top'),
+            timerBottom: document.getElementById('timer-bottom'),
+            selectTimeW: document.getElementById('select-time-w'),
+            selectTimeB: document.getElementById('select-time-b'),
+            customWrapW: document.getElementById('custom-wrap-w'),
+            customWrapB: document.getElementById('custom-wrap-b'),
+            customTimeW: document.getElementById('custom-time-w'),
+            customTimeB: document.getElementById('custom-time-b'),
+            selectIncW: document.getElementById('select-inc-w'),
+            selectIncB: document.getElementById('select-inc-b')
+        };
+
+        // ==========================================
+        // 4. SOUND EFFECTS (TONE.JS)
+        // ==========================================
+        let synth = null;
+        function playSound(type) {
+            if (!state.soundEnabled || typeof Tone === 'undefined') return;
+            try {
+                if (!synth) {
+                    synth = new Tone.PolySynth(Tone.Synth, {
+                        oscillator: { type: 'triangle' },
+                        envelope: { attack: 0.01, decay: 0.14, sustain: 0.04, release: 0.25 }
+                    }).toDestination();
+                    synth.volume.value = -8;
+                }
+                if (Tone.context.state !== 'running') Tone.start();
+                const now = Tone.now();
+                if (type === 'move') {
+                    synth.triggerAttackRelease('E4', '32n', now);
+                } else if (type === 'capture') {
+                    synth.triggerAttackRelease('C4', '16n', now);
+                    synth.triggerAttackRelease('G3', '16n', now + 0.05);
+                } else if (type === 'check') {
+                    synth.triggerAttackRelease('A4', '16n', now);
+                    synth.triggerAttackRelease('E5', '16n', now + 0.08);
+                } else if (type === 'win') {
+                    synth.triggerAttackRelease('C5', '8n', now);
+                    synth.triggerAttackRelease('E5', '8n', now + 0.1);
+                    synth.triggerAttackRelease('G5', '8n', now + 0.2);
+                    synth.triggerAttackRelease('C6', '4n', now + 0.3);
+                } else if (type === 'join') {
+                    synth.triggerAttackRelease('G4', '16n', now);
+                    synth.triggerAttackRelease('B4', '8n', now + 0.08);
+                }
+            } catch (e) {}
+        }
+
+        // ==========================================
+        // 5. TOASTS & CLIPBOARD
+        // ==========================================
+        function showToast(msg, type = 'info') {
+            const toast = document.createElement('div');
+            const styles = {
+                info: 'bg-slate-900/95 text-sky-100 border-sky-400/50',
+                success: 'bg-emerald-600/95 text-white border-emerald-300',
+                error: 'bg-rose-600/95 text-white border-rose-300'
+            };
+            toast.className = `${styles[type] || styles.info} px-4 py-2.5 rounded-2xl shadow-2xl border text-xs sm:text-sm font-semibold text-center transition-all duration-300 transform translate-y-2 opacity-0`;
+            toast.textContent = msg;
+            els.toastContainer.appendChild(toast);
+            requestAnimationFrame(() => toast.classList.remove('translate-y-2', 'opacity-0'));
+            setTimeout(() => {
+                toast.classList.add('opacity-0', '-translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        function copyToClipboard(text, successMsg) {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try {
+                document.execCommand('copy');
+                showToast(successMsg, 'success');
+            } catch (e) {
+                showToast('Code: ' + text, 'info');
+            }
+            document.body.removeChild(ta);
+        }
+
+        // ==========================================
+        // 6. CLOCKS (PER PLAYER, WITH OPTIONAL INCREMENT)
+        // ==========================================
+        function getTimerSeconds(c) {
+            const K = c.toUpperCase();
+            const sel = els['selectTime' + K].value;
+            if (sel === 'custom') {
+                const v = parseInt(els['customTime' + K].value, 10);
+                if (!v || v <= 0) return 300;
+                return Math.min(Math.max(v, 5), 10800);
+            }
+            return parseInt(sel, 10);
+        }
+        function secToMs(s) { return s > 0 ? s * 1000 : null; }
+        function readTimerSettings() {
+            const initial = { w: secToMs(getTimerSeconds('w')), b: secToMs(getTimerSeconds('b')) };
+            const inc = {
+                w: initial.w ? parseInt(els.selectIncW.value, 10) * 1000 : 0,
+                b: initial.b ? parseInt(els.selectIncB.value, 10) * 1000 : 0
+            };
+            return { initial, inc };
+        }
+
+        // Fold elapsed time into the active player's clock and move the reference point to "now"
+        function settleClock() {
+            const now = Date.now();
+            if (state.status === 'playing') {
+                const c = chess.turn();
+                if (state.clocks[c] != null) state.clocks[c] = Math.max(0, state.clocks[c] - (now - state.clockRef));
+            }
+            state.clockRef = now;
+        }
+
+        function remainingMs(c) {
+            const v = state.clocks[c];
+            if (v == null) return null;
+            if (state.status === 'playing' && chess.turn() === c) return Math.max(0, v - (Date.now() - state.clockRef));
+            return v;
+        }
+
+        function formatClock(ms) {
+            if (ms == null) return '∞';
+            const total = Math.ceil(ms / 1000);
+            const h = Math.floor(total / 3600);
+            const m = Math.floor((total % 3600) / 60);
+            const s = total % 60;
+            return h > 0 ? `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}` : `${m}:${String(s).padStart(2, '0')}`;
+        }
+
+        function renderTimers() {
+            const topColor = state.orientation === 'w' ? 'b' : 'w';
+            const bottomColor = state.orientation === 'w' ? 'w' : 'b';
+            [['Top', topColor], ['Bottom', bottomColor]].forEach(([pos, c]) => {
+                const el = els['timer' + pos];
+                const r = remainingMs(c);
+                el.textContent = '⏱ ' + formatClock(r);
+                const active = state.status === 'playing' && chess.turn() === c && r != null;
+                let cls = 'game-font text-sm sm:text-base font-bold px-2 py-0.5 rounded-lg tabular-nums ';
+                if (active && r < 10000) cls += 'bg-rose-500 text-white animate-pulse';
+                else if (active) cls += 'bg-sky-400 text-slate-950';
+                else if (r === 0) cls += 'bg-rose-600/70 text-white';
+                else if (r != null && r < 10000) cls += 'bg-rose-500/25 text-rose-200 border border-rose-400/40';
+                else cls += 'bg-slate-800/80 text-sky-200 border border-sky-300/30';
+                el.className = cls;
+            });
+        }
+
+        function tick() {
+            renderTimers();
+            const isAuthority = state.mode === 'local' || (state.mode === 'online' && state.isHost);
+            if (isAuthority && state.status === 'playing') {
+                const r = remainingMs(chess.turn());
+                if (r != null && r <= 0) hostHandleTimeout();
+            }
+        }
+
+        // ==========================================
+        // 7. GAME AUTHORITY (RUNS ON HOST / LOCAL ONLY)
+        // ==========================================
+        function generateRoomCode() {
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+            let res = '';
+            for (let i = 0; i < 6; i++) res += chars.charAt(Math.floor(Math.random() * chars.length));
+            return res;
+        }
+
+        function resetGameState(timers) {
+            chess.reset();
+            Object.assign(state, {
+                selectedSquare: null, legalTargets: [], pendingPromotion: null, lastMove: null,
+                status: 'waiting', resultText: '', winnerColor: null, history: [],
+                white: { name: els.inputNickname.value.trim() || 'Commander White', score: 0 },
+                black: { name: 'Waiting...', score: 0 },
+                rematch: { w: false, b: false },
+                initial: { ...timers.initial }, inc: { ...timers.inc }, clocks: { ...timers.initial },
+                clockRef: Date.now(), started: false, isSubmittingMove: false
+            });
+        }
+
+        function getSnap() {
+            return {
+                fen: chess.fen(), history: state.history, lastMove: state.lastMove,
+                status: state.status, resultText: state.resultText, winnerColor: state.winnerColor,
+                white: state.white, black: state.black, rematch: state.rematch,
+                initial: state.initial, inc: state.inc, clocks: state.clocks, started: state.started
+            };
+        }
+
+        function pushState() {
+            if (state.mode === 'online' && state.isHost && conn && conn.open) {
+                settleClock();
+                conn.send({ type: 'state', snap: getSnap() });
+            }
+        }
+
+        function notifyTransitions(prevStatus, prevFen) {
+            if (prevStatus === 'waiting' && state.status === 'playing' && state.isHost && state.mode === 'online') {
+                playSound('join');
+                showToast(`${state.black.name} entered the arena!`, 'success');
+            } else if (chess.fen() !== prevFen && state.lastMove) {
+                if (chess.in_check()) playSound('check');
+                else if (state.lastMove.captured) playSound('capture');
+                else playSound('move');
+            }
+            if (prevStatus === 'playing' && state.status === 'ended' && state.winnerColor) {
+                playSound('win');
+                if (state.mode === 'local' || state.winnerColor === state.playerColor) triggerConfetti();
+            }
+        }
+
+        function afterHostChange(prevStatus, prevFen) {
+            pushState();
+            notifyTransitions(prevStatus, prevFen);
+            updateUI();
+        }
+
+        function endGame(winnerColor, resultText, reason) {
+            state.status = 'ended';
+            state.winnerColor = winnerColor;
+            state.resultText = resultText;
+            state.endReason = reason;
+            if (winnerColor) state[winnerColor === 'w' ? 'white' : 'black'].score += 1;
+        }
+
+        function hostApplyMove(m, color) {
+            if (!m || typeof m.from !== 'string' || typeof m.to !== 'string') return;
+            if (state.status !== 'playing' || chess.turn() !== color) return;
+
+            settleClock();
+            if (state.clocks[color] != null && state.clocks[color] <= 0) {
+                hostHandleTimeout();
+                return;
+            }
+
+            const prevStatus = state.status;
+            const prevFen = chess.fen();
+            const promotion = ['q', 'r', 'b', 'n'].includes(m.promotion) ? m.promotion : undefined;
+            const res = chess.move({ from: m.from, to: m.to, promotion });
+            if (!res) return; // illegal move: ignore
+
+            state.selectedSquare = null;
+            state.legalTargets = [];
+            state.lastMove = { from: res.from, to: res.to, captured: res.captured || null };
+            state.history = [...state.history, res.san];
+
+            if (state.clocks[color] != null && state.inc[color]) state.clocks[color] += state.inc[color];
+
+            if (chess.in_checkmate()) {
+                const winnerName = color === 'w' ? state.white.name : state.black.name;
+                endGame(color, `Checkmate! ${winnerName} Wins!`, 'checkmate');
+            } else if (chess.in_stalemate()) {
+                endGame(null, 'Draw by Stalemate!', 'stalemate');
+            } else if (chess.in_threefold_repetition()) {
+                endGame(null, 'Draw by Threefold Repetition!', 'repetition');
+            } else if (chess.insufficient_material()) {
+                endGame(null, 'Draw by Insufficient Material!', 'material');
+            } else if (chess.in_draw()) {
+                endGame(null, 'Game Drawn!', 'draw');
+            }
+            state.clockRef = Date.now();
+            afterHostChange(prevStatus, prevFen);
+        }
+
+        // Can this side still possibly checkmate? (a lone king, or king + one minor piece, cannot)
+        function canMate(color) {
+            let minors = 0;
+            for (const row of chess.board()) {
+                for (const sq of row) {
+                    if (!sq || sq.color !== color || sq.type === 'k') continue;
+                    if (sq.type === 'p' || sq.type === 'r' || sq.type === 'q') return true;
+                    minors++;
+                }
+            }
+            return minors >= 2;
+        }
+
+        function hostHandleTimeout() {
+            if (state.status !== 'playing') return;
+            const prevStatus = state.status;
+            const prevFen = chess.fen();
+            settleClock();
+            const loser = chess.turn();
+            const winner = loser === 'w' ? 'b' : 'w';
+            const loserName = loser === 'w' ? state.white.name : state.black.name;
+            const winnerName = winner === 'w' ? state.white.name : state.black.name;
+            state.clocks[loser] = 0;
+            if (canMate(winner)) {
+                endGame(winner, `⏱️ ${loserName} ran out of time. ${winnerName} Wins!`, 'timeout');
+            } else {
+                endGame(null, `⏱️ ${loserName} ran out of time, but ${winnerName} cannot checkmate. Draw!`, 'timeout');
+            }
+            afterHostChange(prevStatus, prevFen);
+        }
+
+        function hostResign(loserColor) {
+            if (state.status !== 'playing') return;
+            const prevStatus = state.status;
+            const prevFen = chess.fen();
+            settleClock();
+            const winner = loserColor === 'w' ? 'b' : 'w';
+            const winnerName = winner === 'w' ? state.white.name : state.black.name;
+            endGame(winner, `${winnerName} Wins by Resignation!`, 'resign');
+            afterHostChange(prevStatus, prevFen);
+        }
+
+        function hostResetRound() {
+            const prevStatus = state.status;
+            const prevFen = chess.fen();
+            chess.reset();
+            Object.assign(state, {
+                status: 'playing', winnerColor: null, resultText: '', lastMove: null, history: [],
+                selectedSquare: null, legalTargets: [], rematch: { w: false, b: false },
+                clocks: { ...state.initial }, clockRef: Date.now()
+            });
+            afterHostChange(prevStatus, prevFen);
+        }
+
+        function hostRematchVote(color) {
+            if (state.status !== 'ended') return;
+            state.rematch = { ...state.rematch, [color]: true };
+            if (state.rematch.w && state.rematch.b) {
+                hostResetRound();
+            } else {
+                pushState();
+                updateUI();
+            }
+        }
+
+        function onGuestLeft() {
+            if (state.status === 'playing') {
+                settleClock();
+                state.status = 'waiting'; // pauses both clocks
+            }
+            state.rematch = { w: false, b: false };
+            showToast('Opponent disconnected. Waiting for them to rejoin…', 'info');
+            updateUI();
+        }
+
+        function handleHostMessage(msg) {
+            if (!msg || typeof msg !== 'object') return;
+            lastSeen = Date.now();
+            if (msg.type === 'hello') {
+                const prevStatus = state.status;
+                const prevFen = chess.fen();
+                state.black = { ...state.black, name: String(msg.name || 'Commander Black').slice(0, 16) };
+                if (conn && conn.open) conn.send({ type: 'welcome', color: 'b' });
+                if (state.status === 'waiting') {
+                    state.status = 'playing';
+                    state.started = true;
+                    state.clockRef = Date.now(); // clocks start when both players are present
+                }
+                afterHostChange(prevStatus, prevFen);
+            } else if (msg.type === 'move') {
+                hostApplyMove(msg, 'b');
+            } else if (msg.type === 'resign') {
+                hostResign('b');
+            } else if (msg.type === 'rematch') {
+                hostRematchVote('b');
+            }
+        }
+
+        // ==========================================
+        // 8. WEBRTC CONNECTION (PEERJS)
+        // ==========================================
+        function updateConnBadge(status, label) {
+            els.connBadge.classList.remove('hidden');
+            els.connText.textContent = label;
+            els.connDot.className = 'w-2.5 h-2.5 rounded-full ' + (status === 'online' ? 'bg-emerald-400' : 'bg-amber-400');
+        }
+
+        function teardownNetwork() {
+            clearTimeout(netTimeout);
+            clearInterval(pingTimer);
+            pingTimer = null;
+            if (conn) {
+                const c = conn;
+                conn = null; // null first so the 'close' handler ignores it
+                try { c.close(); } catch (e) {}
+            }
+            if (peer) {
+                const p = peer;
+                peer = null;
+                try { p.destroy(); } catch (e) {}
+            }
+        }
+
+        function createOnlineRoom() {
+            if (typeof Peer === 'undefined') {
+                showToast('Networking library failed to load. Check your internet connection.', 'error');
+                return;
+            }
+            teardownNetwork();
+            els.btnCreateRoom.disabled = true;
+            const timers = readTimerSettings();
+            let attempts = 0;
+
+            const attempt = () => {
+                const code = generateRoomCode();
+                const myPeer = new Peer(PEER_PREFIX + code, PEER_OPTIONS);
+                peer = myPeer;
+                let opened = false;
+
+                clearTimeout(netTimeout);
+                netTimeout = setTimeout(() => {
+                    if (!opened && peer === myPeer) {
+                        teardownNetwork();
+                        els.btnCreateRoom.disabled = false;
+                        showToast('Could not reach the connection server. Try again.', 'error');
+                    }
+                }, 15000);
+
+                myPeer.on('open', () => {
+                    if (peer !== myPeer) return;
+                    opened = true;
+                    clearTimeout(netTimeout);
+                    resetGameState(timers);
+                    Object.assign(state, { mode: 'online', isHost: true, roomId: code, playerColor: 'w', orientation: 'w', status: 'waiting' });
+                    els.btnCreateRoom.disabled = false;
+                    switchView('game');
+                    updateUI();
+                    showToast('Room created! Share code or link with a friend.', 'success');
+                });
+
+                myPeer.on('connection', (c) => {
+                    if (peer !== myPeer) return;
+                    const stale = !conn || !conn.open || (Date.now() - lastSeen > 12000);
+                    if (!stale) {
+                        c.on('open', () => {
+                            try { c.send({ type: 'full' }); } catch (e) {}
+                            setTimeout(() => { try { c.close(); } catch (e) {} }, 500);
+                        });
+                        return;
+                    }
+                    if (conn) { // replace a dead connection (e.g. friend refreshed the page)
+                        const old = conn;
+                        conn = null;
+                        try { old.close(); } catch (e) {}
+                    }
+                    conn = c;
+                    lastSeen = Date.now();
+                    c.on('data', (m) => { if (conn === c) handleHostMessage(m); });
+                    c.on('close', () => { if (conn === c) { conn = null; onGuestLeft(); } });
+                    c.on('error', () => {});
+                });
+
+                myPeer.on('disconnected', () => {
+                    // Lost only the signaling server; the game link keeps working. Re-register so others can still join.
+                    if (peer === myPeer && !myPeer.destroyed) {
+                        setTimeout(() => { try { myPeer.reconnect(); } catch (e) {} }, 1500);
+                    }
+                });
+
+                myPeer.on('error', (err) => {
+                    if (peer !== myPeer) return;
+                    if (err.type === 'unavailable-id' && attempts < 5 && !opened) {
+                        attempts++;
+                        try { myPeer.destroy(); } catch (e) {}
+                        attempt();
+                        return;
+                    }
+                    if (!opened) {
+                        teardownNetwork();
+                        els.btnCreateRoom.disabled = false;
+                        showToast('Could not create room. Please retry.', 'error');
+                    } else if (err.type !== 'peer-unavailable') {
+                        showToast('Connection issue: ' + err.type, 'error');
+                    }
+                });
+            };
+            attempt();
+        }
+
+        function joinOnlineRoom(codeInput) {
+            const code = (codeInput || '').trim().toUpperCase();
+            if (code.length !== 6) {
+                showToast('Enter the 6-character room code.', 'error');
+                return;
+            }
+            if (typeof Peer === 'undefined') {
+                showToast('Networking library failed to load. Check your internet connection.', 'error');
+                return;
+            }
+            teardownNetwork();
+            els.btnJoinRoom.disabled = true;
+
+            let connected = false;
+            const fail = (msg) => {
+                if (connected) return;
+                teardownNetwork();
+                els.btnJoinRoom.disabled = false;
+                showToast(msg, 'error');
+            };
+
+            const myPeer = new Peer(PEER_OPTIONS);
+            peer = myPeer;
+            netTimeout = setTimeout(() => fail('Could not reach the room. Check the code and try again.'), 15000);
+
+            myPeer.on('error', (err) => {
+                if (peer !== myPeer) return;
+                fail(err.type === 'peer-unavailable' ? `Room "${code}" not found.` : 'Connection error. Please try again.');
+            });
+
+            myPeer.on('open', () => {
+                if (peer !== myPeer) return;
+                const c = myPeer.connect(PEER_PREFIX + code, { reliable: true });
+
+                c.on('open', () => {
+                    if (peer !== myPeer) return;
+                    connected = true;
+                    clearTimeout(netTimeout);
+                    conn = c;
+                    chess.reset();
+                    const myName = els.inputNickname.value.trim() || 'Commander Black';
+                    Object.assign(state, {
+                        mode: 'online', isHost: false, roomId: code, playerColor: 'b', orientation: 'b',
+                        status: 'waiting', started: true, isSubmittingMove: false,
+                        selectedSquare: null, legalTargets: [], pendingPromotion: null, lastMove: null,
+                        resultText: '', winnerColor: null, history: [],
+                        white: { name: 'Commander White', score: 0 }, black: { name: myName, score: 0 },
+                        rematch: { w: false, b: false },
+                        initial: { w: null, b: null }, inc: { w: 0, b: 0 }, clocks: { w: null, b: null }
+                    });
+                    c.send({ type: 'hello', name: myName });
+                    clearInterval(pingTimer);
+                    pingTimer = setInterval(() => { if (conn && conn.open) conn.send({ type: 'ping' }); }, 4000);
+                    els.btnJoinRoom.disabled = false;
+                    switchView('game');
+                    updateUI();
+                });
+
+                c.on('data', handleGuestMessage);
+
+                c.on('close', () => {
+                    if (conn !== c) return;
+                    conn = null;
+                    showToast('The host left the room.', 'info');
+                    leaveToLobby();
+                });
+                c.on('error', () => {});
+            });
+        }
+
+        function handleGuestMessage(msg) {
+            if (!msg || typeof msg !== 'object') return;
+            if (msg.type === 'welcome') {
+                state.playerColor = msg.color;
+            } else if (msg.type === 'full') {
+                showToast('This room already has two players.', 'error');
+                leaveToLobby();
+            } else if (msg.type === 'state' && msg.snap) {
+                const s = msg.snap;
+                const prevStatus = state.status;
+                const prevFen = chess.fen();
+                if (s.fen && s.fen !== prevFen) chess.load(s.fen);
+                Object.assign(state, {
+                    status: s.status, resultText: s.resultText || '', winnerColor: s.winnerColor || null,
+                    lastMove: s.lastMove || null, history: s.history || [],
+                    white: s.white, black: s.black, rematch: s.rematch,
+                    initial: s.initial, inc: s.inc, clocks: s.clocks, started: s.started,
+                    selectedSquare: null, legalTargets: [], pendingPromotion: null,
+                    clockRef: Date.now(), isSubmittingMove: false
+                });
+                notifyTransitions(prevStatus, prevFen);
+                updateUI();
+            }
+        }
+
+        // ==========================================
+        // 9. PLAYER ACTIONS
+        // ==========================================
+        function canMoveNow() {
+            if (state.status !== 'playing' || state.isSubmittingMove) return false;
+            if (state.mode === 'local') return true;
+            return state.playerColor === chess.turn();
+        }
+
+        function executeMove(moveObj) {
+            state.selectedSquare = null;
+            state.legalTargets = [];
+            if (state.mode === 'local') {
+                hostApplyMove(moveObj, chess.turn());
+            } else if (state.isHost) {
+                hostApplyMove(moveObj, 'w');
+            } else if (conn && conn.open) {
+                state.isSubmittingMove = true;
+                conn.send({ type: 'move', from: moveObj.from, to: moveObj.to, promotion: moveObj.promotion });
+                setTimeout(() => { state.isSubmittingMove = false; }, 2500);
+                renderBoard();
+            }
+        }
+
+        function handleResign() {
+            if (state.status !== 'playing') return;
+            if (state.mode === 'local') hostResign(chess.turn());
+            else if (state.isHost) hostResign('w');
+            else if (conn && conn.open) conn.send({ type: 'resign' });
+        }
+
+        function handleRematch() {
+            if (state.mode === 'local') hostResetRound();
+            else if (state.isHost) hostRematchVote('w');
+            else if (conn && conn.open) conn.send({ type: 'rematch' });
+        }
+
+        function startLocalGame() {
+            teardownNetwork();
+            resetGameState(readTimerSettings());
+            Object.assign(state, {
+                mode: 'local', isHost: true, roomId: 'LOCAL', playerColor: 'w', orientation: 'w',
+                status: 'playing', started: true
+            });
+            state.white.name = els.inputNickname.value.trim() || 'Player White';
+            state.black = { name: 'Player Black', score: 0 };
+            state.clockRef = Date.now();
+            switchView('game');
+            updateUI();
+        }
+
+        function leaveToLobby() {
+            teardownNetwork();
+            state.roomId = null;
+            state.status = 'lobby';
+            state.isHost = false;
+            state.mode = 'online';
+            els.btnCreateRoom.disabled = false;
+            els.btnJoinRoom.disabled = false;
+            els.promotionOverlay.classList.add('hidden');
+            setUrlRoom(null);
+            switchView('lobby');
+        }
+
+
+        // ==========================================
+        // 7. CHESS BOARD RENDERING & INTERACTION
+        // ==========================================
+        const FILES = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+        const RANKS = ['8', '7', '6', '5', '4', '3', '2', '1'];
+
+        function renderBoard() {
+            els.chessBoard.innerHTML = '';
+            const board = chess.board();
+            const turn = chess.turn();
+            const inCheck = chess.in_check();
+
+            const ranksOrder = state.orientation === 'w' ? [0, 1, 2, 3, 4, 5, 6, 7] : [7, 6, 5, 4, 3, 2, 1, 0];
+            const filesOrder = state.orientation === 'w' ? [0, 1, 2, 3, 4, 5, 6, 7] : [7, 6, 5, 4, 3, 2, 1, 0];
+
+            for (let rIdx = 0; rIdx < 8; rIdx++) {
+                const r = ranksOrder[rIdx];
+                for (let fIdx = 0; fIdx < 8; fIdx++) {
+                    const f = filesOrder[fIdx];
+                    const sqName = FILES[f] + RANKS[r];
+                    const piece = board[r][f];
+                    const isLight = (r + f) % 2 === 0;
+
+                    const sqEl = document.createElement('div');
+                    sqEl.className = `square ${isLight ? 'sq-light' : 'sq-dark'}`;
+                    sqEl.dataset.square = sqName;
+
+                    // Highlight selected square
+                    if (state.selectedSquare === sqName) {
+                        sqEl.classList.add('selected');
+                    }
+
+                    // Highlight last move
+                    if (state.lastMove && (state.lastMove.from === sqName || state.lastMove.to === sqName)) {
+                        sqEl.classList.add('last-move');
+                    }
+
+                    // Highlight King in Check
+                    if (inCheck && piece && piece.type === 'k' && piece.color === turn) {
+                        sqEl.classList.add('in-check');
+                    }
+
+                    // Coordinate Labels on bottom & left edges
+                    if (fIdx === 0) {
+                        const rankSpan = document.createElement('span');
+                        rankSpan.className = 'coord-rank';
+                        rankSpan.textContent = RANKS[r];
+                        sqEl.appendChild(rankSpan);
+                    }
+                    if (rIdx === 7) {
+                        const fileSpan = document.createElement('span');
+                        fileSpan.className = 'coord-file';
+                        fileSpan.textContent = FILES[f];
+                        sqEl.appendChild(fileSpan);
+                    }
+
+                    // Piece SVG
+                    if (piece) {
+                        const key = piece.color + piece.type.toUpperCase();
+                        sqEl.insertAdjacentHTML('beforeend', PIECE_SVGS[key]);
+                    }
+
+                    // Legal Target Indicator
+                    const targetMove = state.legalTargets.find(m => m.to === sqName);
+                    if (targetMove) {
+                        if (piece || targetMove.flags.includes('e')) {
+                            const ring = document.createElement('div');
+                            ring.className = 'legal-capture';
+                            sqEl.appendChild(ring);
+                        } else {
+                            const dot = document.createElement('div');
+                            dot.className = 'legal-dot';
+                            sqEl.appendChild(dot);
+                        }
+                    }
+
+                    sqEl.addEventListener('click', () => handleSquareClick(sqName));
+                    els.chessBoard.appendChild(sqEl);
+                }
+            }
+        }
+
+        function handleSquareClick(sqName) {
+            if (!canMoveNow()) return;
+
+            // Check if clicked square is a legal destination for currently selected piece
+            const chosenMove = state.legalTargets.find(m => m.to === sqName);
+            if (chosenMove) {
+                // Check if pawn promotion
+                if (chosenMove.flags.includes('p')) {
+                    openPromotionDialog(chosenMove.from, chosenMove.to);
+                    return;
+                }
+                executeMove({ from: chosenMove.from, to: chosenMove.to });
+                return;
+            }
+
+            // Otherwise, select own piece
+            const piece = chess.get(sqName);
+            if (piece && piece.color === chess.turn()) {
+                if (state.selectedSquare === sqName) {
+                    state.selectedSquare = null;
+                    state.legalTargets = [];
+                } else {
+                    state.selectedSquare = sqName;
+                    state.legalTargets = chess.moves({ square: sqName, verbose: true });
+                }
+            } else {
+                state.selectedSquare = null;
+                state.legalTargets = [];
+            }
+
+            renderBoard();
+        }
+
+        function openPromotionDialog(from, to) {
+            state.pendingPromotion = { from, to };
+            const color = chess.turn();
+            const pieces = ['q', 'r', 'b', 'n'];
+            els.promotionChoices.innerHTML = '';
+
+            pieces.forEach(p => {
+                const btn = document.createElement('button');
+                btn.className = 'p-2 rounded-xl bg-sky-400/20 hover:bg-sky-400/40 border border-sky-300/50 flex items-center justify-center transition transform hover:scale-105';
+                btn.innerHTML = PIECE_SVGS[color + p.toUpperCase()];
+                btn.addEventListener('click', () => {
+                    els.promotionOverlay.classList.add('hidden');
+                    executeMove({ from, to, promotion: p });
+                    state.pendingPromotion = null;
+                });
+                els.promotionChoices.appendChild(btn);
+            });
+
+            els.promotionOverlay.classList.remove('hidden');
+        }
+
+        // ==========================================
+        // 9. UI SYNCHRONIZATION & CAPTURED PIECES
+        // ==========================================
+        function computeCapturedPieces() {
+            // Standard starting counts
+            const initial = { p: 8, n: 2, b: 2, r: 2, q: 1 };
+            const current = { w: { p: 0, n: 0, b: 0, r: 0, q: 0 }, b: { p: 0, n: 0, b: 0, r: 0, q: 0 } };
+            const board = chess.board();
+            for (let r = 0; r < 8; r++) {
+                for (let c = 0; c < 8; c++) {
+                    const sq = board[r][c];
+                    if (sq && sq.type !== 'k') {
+                        current[sq.color][sq.type]++;
+                    }
+                }
+            }
+            const symbols = {
+                w: { q: '♕', r: '♖', b: '♗', n: '♘', p: '♙' },
+                b: { q: '♛', r: '♜', b: '♝', n: '♞', p: '♟' }
+            };
+            let capturedByWhite = '';
+            let capturedByBlack = '';
+            ['q', 'r', 'b', 'n', 'p'].forEach(t => {
+                const lostBlack = Math.max(0, initial[t] - current.b[t]);
+                const lostWhite = Math.max(0, initial[t] - current.w[t]);
+                capturedByWhite += symbols.b[t].repeat(lostBlack);
+                capturedByBlack += symbols.w[t].repeat(lostWhite);
+            });
+            return { w: capturedByWhite, b: capturedByBlack };
+        }
+
+        function updateUI() {
+            // Invite Card & Waiting Overlay
+            if (state.mode === 'local') {
+                els.inviteCard.classList.add('hidden');
+            } else {
+                els.inviteCard.classList.remove('hidden');
+                els.displayRoomCode.textContent = state.roomId;
+                els.overlayRoomCode.textContent = state.roomId;
+            }
+
+            els.waitingOverlay.classList.toggle('hidden', !(state.mode === 'online' && state.isHost && state.status === 'waiting'));
+            if (state.status !== 'playing') els.promotionOverlay.classList.add('hidden');
+
+            // Determine which player is shown on Top vs Bottom based on board orientation
+            const topColor = state.orientation === 'w' ? 'b' : 'w';
+            const bottomColor = state.orientation === 'w' ? 'w' : 'b';
+
+            const topPlayer = topColor === 'w' ? state.white : state.black;
+            const bottomPlayer = bottomColor === 'w' ? state.white : state.black;
+
+            els.avatarTop.textContent = topColor === 'w' ? '♔' : '♚';
+            els.avatarTop.className = `w-9 h-9 rounded-xl flex items-center justify-center font-bold text-lg border ${topColor === 'w' ? 'bg-sky-100 text-slate-900 border-white' : 'bg-slate-800 text-sky-200 border-sky-300/40'}`;
+
+            els.avatarBottom.textContent = bottomColor === 'w' ? '♔' : '♚';
+            els.avatarBottom.className = `w-9 h-9 rounded-xl flex items-center justify-center font-bold text-lg border ${bottomColor === 'w' ? 'bg-sky-100 text-slate-900 border-white' : 'bg-slate-800 text-sky-200 border-sky-300/40'}`;
+
+            els.nameTop.textContent = (topColor === 'b' && state.status === 'waiting' && !state.started) ? 'Waiting...' : topPlayer.name;
+            els.nameBottom.textContent = (bottomColor === 'b' && state.status === 'waiting' && !state.started) ? 'Waiting...' : bottomPlayer.name;
+
+            els.scoreTop.textContent = topPlayer.score;
+            els.scoreBottom.textContent = bottomPlayer.score;
+
+            els.badgeTop.classList.toggle('hidden', !(state.mode === 'online' && state.playerColor === topColor));
+            els.badgeBottom.classList.toggle('hidden', !(state.mode === 'online' && state.playerColor === bottomColor));
+
+            // Captured pieces display
+            const captured = computeCapturedPieces();
+            els.capturedTop.textContent = captured[topColor];
+            els.capturedBottom.textContent = captured[bottomColor];
+
+            // Turn Indicators
+            const activeTurn = chess.turn();
+            const isPlaying = state.status === 'playing';
+            els.turnPillTop.classList.toggle('hidden', !(isPlaying && activeTurn === topColor));
+            els.turnPillBottom.classList.toggle('hidden', !(isPlaying && activeTurn === bottomColor));
+
+            // Status Banner Text
+            if (state.status === 'waiting') {
+                if (state.mode === 'online' && !state.isHost) {
+                    els.statusTitle.textContent = 'Connecting...';
+                    els.statusSubtitle.textContent = 'Reaching the host';
+                } else if (state.started) {
+                    els.statusTitle.textContent = 'Game Paused';
+                    els.statusSubtitle.textContent = 'Opponent left. Clocks resume when they rejoin';
+                } else {
+                    els.statusTitle.textContent = 'Waiting for Opponent';
+                    els.statusSubtitle.textContent = 'Share room code or link to start';
+                }
+            } else if (state.status === 'playing') {
+                const turnName = activeTurn === 'w' ? state.white.name : state.black.name;
+                const isMyTurn = state.mode === 'online' && state.playerColor === activeTurn;
+                els.statusTitle.textContent = isMyTurn ? 'Your Turn!' : `${turnName}'s Turn`;
+                if (chess.in_check()) {
+                    els.statusSubtitle.textContent = '⚠️ CHECK! Protect the King!';
+                    els.statusSubtitle.className = 'text-xs font-bold text-amber-300';
+                } else {
+                    els.statusSubtitle.textContent = activeTurn === 'w' ? 'White pieces to move' : 'Black pieces to move';
+                    els.statusSubtitle.className = 'text-xs text-sky-200/85';
+                }
+            } else if (state.status === 'ended') {
+                els.statusTitle.textContent = state.resultText || 'Match Over';
+                els.statusSubtitle.textContent = 'Click Play Rematch for another round';
+                els.statusSubtitle.className = 'text-xs text-emerald-300 font-semibold';
+            }
+
+            // Resign & Rematch Buttons
+            els.btnResign.disabled = !(state.status === 'playing' && (state.mode === 'local' || state.playerColor === 'w' || state.playerColor === 'b'));
+
+            if (state.status === 'ended' && (state.mode === 'local' || state.playerColor === 'w' || state.playerColor === 'b')) {
+                els.btnRematch.classList.remove('hidden');
+                if (state.mode === 'online') {
+                    const oppColor = state.playerColor === 'w' ? 'b' : 'w';
+                    if (state.rematch[state.playerColor]) {
+                        els.rematchText.textContent = 'Waiting for Opponent...';
+                        els.btnRematch.disabled = true;
+                    } else if (state.rematch[oppColor]) {
+                        els.rematchText.textContent = 'Accept Rematch!';
+                        els.btnRematch.disabled = false;
+                    } else {
+                        els.rematchText.textContent = 'Play Rematch';
+                        els.btnRematch.disabled = false;
+                    }
+                } else {
+                    els.rematchText.textContent = 'Play Rematch';
+                    els.btnRematch.disabled = false;
+                }
+            } else {
+                els.btnRematch.classList.add('hidden');
+            }
+
+            // Render Move History Log
+            els.moveCount.textContent = state.history.length;
+            if (state.history.length === 0) {
+                els.moveHistory.innerHTML = '<div class="text-sky-300/50 italic">Game moves will appear here...</div>';
+            } else {
+                let html = '';
+                for (let i = 0; i < state.history.length; i += 2) {
+                    const num = Math.floor(i / 2) + 1;
+                    const wMove = state.history[i] || '';
+                    const bMove = state.history[i + 1] || '';
+                    html += `<div class="flex items-center px-2 py-0.5 rounded bg-slate-900/40">
+                        <span class="w-8 text-sky-300/60">${num}.</span>
+                        <span class="w-20 font-semibold text-white">${wMove}</span>
+                        <span class="w-20 font-semibold text-sky-200">${bMove}</span>
+                    </div>`;
+                }
+                els.moveHistory.innerHTML = html;
+                els.moveHistory.scrollTop = els.moveHistory.scrollHeight;
+            }
+
+            renderBoard();
+            renderTimers();
+        }
+
+        function switchView(view) {
+            els.viewLobby.classList.toggle('hidden', view !== 'lobby');
+            els.viewGame.classList.toggle('hidden', view !== 'game');
+            els.btnLobby.classList.toggle('hidden', view !== 'game');
+        }
+
+        function setUrlRoom(roomId) {
+            try {
+                const url = new URL(window.location.href);
+                if (roomId) url.searchParams.set('room', roomId);
+                else url.searchParams.delete('room');
+                window.history.replaceState({}, '', url);
+            } catch (e) {}
+        }
+
+        function getShareLink() {
+            try {
+                const url = new URL(window.location.href);
+                url.searchParams.set('room', state.roomId);
+                return url.toString();
+            } catch (e) {
+                return `Join my Cosmic Chess room with code: ${state.roomId}`;
+            }
+        }
+
+        function triggerConfetti() {
+            if (typeof confetti === 'function') {
+                confetti({
+                    particleCount: 90,
+                    spread: 75,
+                    origin: { y: 0.6 },
+                    colors: ['#38bdf8', '#facc15', '#a78bfa', '#ffffff']
+                });
+            }
+        }
+
+        // ==========================================
+        // 10. EVENT LISTENERS
+        // ==========================================
+        els.btnCreateRoom.addEventListener('click', createOnlineRoom);
+        els.btnJoinRoom.addEventListener('click', () => joinOnlineRoom(els.inputRoomCode.value));
+        els.inputRoomCode.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') joinOnlineRoom(els.inputRoomCode.value);
+        });
+        els.btnLocalMode.addEventListener('click', startLocalGame);
+        els.btnLobby.addEventListener('click', leaveToLobby);
+
+        // Show the custom-seconds box only when "Custom" is picked
+        ['W', 'B'].forEach(K => {
+            els['selectTime' + K].addEventListener('change', () => {
+                els['customWrap' + K].classList.toggle('hidden', els['selectTime' + K].value !== 'custom');
+            });
+        });
+
+        els.btnCopyCode.addEventListener('click', () => copyToClipboard(state.roomId, `Room code "${state.roomId}" copied!`));
+        els.btnCopyLink.addEventListener('click', () => copyToClipboard(getShareLink(), 'Invite link copied! Share with your opponent.'));
+        els.btnOverlayLink.addEventListener('click', () => copyToClipboard(getShareLink(), 'Invite link copied! Share with your opponent.'));
+
+        els.btnFlip.addEventListener('click', () => {
+            state.orientation = state.orientation === 'w' ? 'b' : 'w';
+            updateUI();
+        });
+
+        els.btnResign.addEventListener('click', handleResign);
+        els.btnRematch.addEventListener('click', handleRematch);
+
+        els.btnSound.addEventListener('click', () => {
+            state.soundEnabled = !state.soundEnabled;
+            els.iconSoundOn.classList.toggle('hidden', !state.soundEnabled);
+            els.iconSoundOff.classList.toggle('hidden', state.soundEnabled);
+            if (state.soundEnabled) playSound('move');
+        });
+
+        window.onload = () => {
+            initStarfield();
+            renderBoard();
+            setInterval(tick, 200);
+
+            if (typeof Peer === 'undefined') {
+                updateConnBadge('offline', 'Local Mode Only');
+            } else {
+                updateConnBadge('online', 'Peer-to-peer ready');
+                const roomParam = new URLSearchParams(window.location.search).get('room');
+                if (roomParam && roomParam.trim().length === 6) {
+                    els.inputRoomCode.value = roomParam.trim().toUpperCase();
+                    joinOnlineRoom(roomParam);
+                }
+            }
+        };
+    </script>
+</body>
+</html>
